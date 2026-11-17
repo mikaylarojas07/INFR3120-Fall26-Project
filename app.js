@@ -1,6 +1,9 @@
+//require .env configuration
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://deanpilieci:mongo111@cluster0.o3pemvu.mongodb.net/INFR3120-Fall26-Project?retryWrites=true&w=majority");
+//from stack overflow
+mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', () => {
     console.log('MongoDB Connected');
