@@ -1,30 +1,46 @@
-const express = require('express');
-const router = express.Router();
-const Item = require('../models/items');
+let express = require('express');
+let router = express.Router();
+let Item = require('../models/items');
+
+let mongoose = require('mongoose');
 
 // List all lost items
-router.get('/home', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
-        const items = await Item.find();
+        const Itemlist = await Item.find();
         res.render('list', {
-            title: 'Lost Items Logs',
-            items: items
+            title: 'Lost Items',
+            Itemlist: Itemlist
         });
     } catch (err) {
         console.log(err);
     }
 });
 
+//create
+router.get('/create', async(req, res, next)=>{
+    try{
+        res.render('create', {
+            title: 'Report Lost Item'
+        });
+    }
+    catch(err){
+        console.error(err);
+    }
+})
+
+
+
 // Create a new lost item
-router.post('/create', async (req, res) => {
+router.post('/create', async (req, res, next) => {
     try {
         await Item.create({
-            Reportedby: req.body.Reportedby,
-            ItemName: req.body.ItemName,
-            Description: req.body.Description,
+            reportedBy: req.body.reportedBy,
+            itemName: req.body.itemName,
+            description: req.body.description,
             lastSeen: req.body.lastSeen,
-            Date: req.body.Date,
-            Contact: req.body.Contact
+            date: req.body.date,
+            contact: req.body.contact
         });
 
         res.redirect('/items');

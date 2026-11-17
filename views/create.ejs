@@ -10,51 +10,51 @@
     <div class="row mb-4">
         <div class="offset-md-3 col-md-6 text-center">
             <img src="/stylesheets/Images/image.jpg" class="mx-auto d-block">
-            <a href="/home" class="btn btn-primary" role="button"> <i class="fas fa-arrow-left"></i> Back to Lost Items</a>
+            <a href="/items" class="btn btn-primary" role="button"> <i class="fas fa-arrow-left"></i> Back to Lost Items</a>
         </div>
       </div>
-            <h1><%= title %></h1>
-            <form class="form" method="post">
+            <h1>Create A Lost Item</h1>
+            <form class="form" method="post" action="/items/create">
                 <div class="form-group">
                     <label for="nameTextField">Your Name</label>
-                    <input type="text" class="form-control" id="nameTextField"
+                    <input type="text" class="form-control" id="reportedBy"
                     placeholder="Enter your name"
-                    name="name" required>
+                    name="reportedBy" required>
                 </div>
                 <div class="form-group">
                     <label for="itemTextField">Item Name</label>
-                    <input type="text" class="form-control" id="itemTextField"
+                    <input type="text" class="form-control" id="itemName"
                     placeholder="Enter the item name"
-                    name="author" required>
+                    name="itemName" required>
                 </div>
                 <div class="form-group">
                     <label for="descriptionTextField">Item Description</label>
-                    <textarea type="text" class="form-control" id="descriptionTextField"
+                    <textarea type="text" class="form-control" id="description"
                     placeholder="Enter the item description"
                     name="description" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="lastSeenTextField">Last Seen</label>
-                    <input type="text" class="form-control" id="lastSeenTextField"
+                    <input type="text" class="form-control" id="lastSeen"
                     placeholder="Where was this item last seen?"
                     name="lastSeen" required>
                 </div>
                 <div class="form-group">
                     <label for="dateTextField">Date</label>
-                    <input type="date" class="form-control" id="dateTextField"
+                    <input type="date" class="form-control" id="date"
                     placeholder="Enter today's date"
                     name="date" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="contactTextField">Email</label>
-                    <input type="email" class="form-control" id="contactTextField"
+                    <input type="email" class="form-control" id="contact"
                     placeholder="Enter your school email"
                     name="contact" required>
                 </div>
-                <button class="btn-btn-primary" type="submit">
+                <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit
                 </button>
-                <a href="/home" class="btn-btn-warning">
+                <a href="/home" class="btn btn-warning">
                     <i class="fas fa-undo"></i>Cancel
                 </a>
             </form>

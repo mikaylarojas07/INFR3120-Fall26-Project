@@ -1,6 +1,6 @@
 //require .env configuration
 require('dotenv').config();
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); 
 
 //from stack overflow
 mongoose.connect(process.env.MONGODB_URI);
@@ -36,8 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // bootstrap
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
+var itemsRouter = require('./routes/items');
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/items', itemsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

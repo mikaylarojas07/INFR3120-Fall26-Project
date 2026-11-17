@@ -10,8 +10,4 @@ router.get('/home', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
-router.get('/create', function(req, res, next) {
-  res.render('create', { title: 'Create Lost Item' });
-});
-
 module.exports = router;

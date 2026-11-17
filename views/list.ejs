@@ -1,0 +1,35 @@
+<%- include ('partials/header') %>
+<div class="card bg-dark text-white">
+  <div class="card-body">
+    <h4 class="card-title">CampusFind</h4>
+  </div>
+</div>
+<img src="/stylesheets/Images/image.jpg" class="mx-auto d-block">
+<a href="/home" class="btn btn-primary">Back to Home</a>
+<h2>Lost Item Logs</h2>
+<table class="table table-bordered table-striped table-hover">
+    <!--Header Row-->
+    <tr>
+        <th class="text-center col-2">Reported by</th>
+        <th class="text-center col-2">Item Name</th>
+        <th class="text-center col-4">Description</th>
+        <th class="col-2">Last seen</th>
+        <th class="text-center col-1">Date</th>
+        <th class="text-center col-2">Contact</th>
+    </tr>
+
+    <% for(let count=0;count<Itemlist.length;count++) { %>
+        <tr>
+          <td class="text-center col-2"><%= Itemlist[count].reportedBy %></td>
+          <td class="text-center col-2"><%= Itemlist[count].itemName %></td>
+          <td class="text-center col-4"><%= Itemlist[count].description %></td>
+          <td class="col-2"><%= Itemlist[count].lastSeen %></td>
+          <td class="text-center col-1"><%= Itemlist[count].date %></td>
+          <td class="text-center col-2"><%= Itemlist[count].contact %></td>
+        </tr>
+      <%} %>
+    </table>
+<a href="/items/create" class="btn btn-primary" role="button">
+    <i class="fas fa-plus-circle"></i> Report Lost Item
+</a>
+<%- include ('partials/footer') %>
