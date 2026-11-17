@@ -9,6 +9,10 @@ mongoose.connection.on('connected', () => {
     console.log('MongoDB Connected');
 });
 
+mongoose.connection.on("error", (err) => {
+  console.log("MongoDB Error:", err);
+});
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
