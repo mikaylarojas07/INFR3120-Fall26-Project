@@ -4,7 +4,7 @@ let Item = require('../models/items');
 
 let mongoose = require('mongoose');
 
-// List all lost items
+// List all lost items using list.ejs when in /items
 router.get('/', async (req, res, next) => {
     try {
         const Itemlist = await Item.find();
