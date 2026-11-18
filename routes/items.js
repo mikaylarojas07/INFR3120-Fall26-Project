@@ -70,7 +70,7 @@ router.get('/edit/:id', async (req, res) => {
     try {
         const item = await Item.findById(req.params.id);
 
-        res.render('list', {
+        res.render('edit', {
             title: 'Edit Lost Item',
             item: item
         });
