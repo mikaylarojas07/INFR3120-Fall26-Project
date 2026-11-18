@@ -66,44 +66,6 @@ router.get('/delete/:id', async(req,res,next)=>{
     }
 });
 
-// Display Edit Form
-router.get('/edit/:id', async (req, res) => {
-    try {
-
-        const item = await Item.findById(req.params.id);
-
-        res.render('edit', {
-            title: 'Edit Lost Item',
-            item: item
-        });
-
-    } catch (err) {
-        console.log(err);
-        res.redirect('/items');
-    }
-});
-
-// Update Item
-router.post('/edit/:id', async (req, res) => {
-    try {
-
-        await Item.findByIdAndUpdate(req.params.id, {
-            reportedBy: req.body.reportedBy,
-            itemName: req.body.itemName,
-            description: req.body.description,
-            lastSeen: req.body.lastSeen,
-            date: req.body.date,
-            contact: req.body.contact
-        });
-
-        res.redirect('/items');
-
-    } catch (err) {
-        console.log(err);
-        res.redirect('/items');
-    }
-});
-
 module.exports = router;
 
       
