@@ -48,7 +48,7 @@ router.post('/create', async (req, res, next) => {
         console.log(err);
     }
 });
-
+// deletes item if delete is clicked
 router.get('/delete/:id', async(req,res,next)=>{
     try{
         let id= req.params.id;
@@ -70,7 +70,7 @@ router.get('/edit/:id', async (req, res) => {
     try {
         const item = await Item.findById(req.params.id);
 
-        res.render('create', {
+        res.render('list', {
             title: 'Edit Lost Item',
             item: item
         });
