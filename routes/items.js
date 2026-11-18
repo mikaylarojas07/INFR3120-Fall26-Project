@@ -80,6 +80,7 @@ router.get('/edit/:id', async (req, res) => {
     }
 });
 
+
 router.post('/edit/:id', async (req, res) => {
     try {
 
@@ -92,13 +93,12 @@ router.post('/edit/:id', async (req, res) => {
             contact: req.body.contact
         });
 
-        res.redirect('/list');
+        res.redirect('/items');
     }
     catch(err){
         console.log(err);
     }
 });
-
 module.exports = router;
 
       
