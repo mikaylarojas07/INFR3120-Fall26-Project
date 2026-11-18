@@ -5,16 +5,19 @@
   </div>
 </div>
 
+<!--Content very similar to create.ejs, with some small differences-->
 <container class="row offset-md-3"></container>
 <div class="container mb-5 pb-5">
     <div class="row mb-4">
         <div class="offset-md-3 col-md-6 text-center">
             <img src="/stylesheets/Images/image.jpg" class="mx-auto d-block">
+            <!--Redirects users back to lost item logs -> /items (list.ejs)-->
             <a href="/items" class="btn btn-primary" role="button"> <i class="fas fa-arrow-left"></i> Back to Lost Items</a>
         </div>
       </div>
-            <h1>Edit Lost Item Report</h1>
+            <h1>Edit Lost Item Report</h1> <!--New header to establish difference from create page-->
             <form class="form" method="post">
+                <!--New property "value" to populate the current value associated with the object, for simple and quick editing-->
                 <div class="form-group">
                     <label for="nameTextField">Your Name</label>
                     <input type="text" class="form-control" id="reportedBy"
@@ -51,6 +54,7 @@
                     placeholder="Enter today's date"
                     name="date" 
                     <%#Converts the date input to a string that is formatted like yyyy-mm-dd%>
+                    <%#Code adapted from Stack Overflow (see README for details and link)%>
                     value="<%=item.date.toISOString().split('T')[0]%>"
                     required>
                 </div>
@@ -62,6 +66,7 @@
                     value="<%=item.contact%>"
                     required>
                 </div>
+                <!--Changed text on submit button to "Update"-->
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Update
                 </button>

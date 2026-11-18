@@ -1,3 +1,4 @@
+<!--Including header content from the header partial-->
 <%- include ('partials/header') %>
 <div class="card bg-dark text-white">
   <div class="card-body">
@@ -6,16 +7,16 @@
 </div>
 
 <container class="row offset-md-3"></container>
-<div class="container mb-5 pb-5">
+<div class="container mb-5 pb-5"> <!--Adds margins and padding to the bottom of the container div, Bootstrap styling-->
     <div class="row mb-4">
         <div class="offset-md-3 col-md-6 text-center">
-            <img src="/stylesheets/Images/image.jpg" class="mx-auto d-block">
+            <img src="/stylesheets/Images/image.jpg" class="mx-auto d-block"> 
             <a href="/items" class="btn btn-primary" role="button"> <i class="fas fa-arrow-left"></i> Back to Lost Items</a>
         </div>
       </div>
             <h1>Create A Lost Item</h1>
-            <form class="form" method="post" action="/items/create">
-                <div class="form-group">
+            <form class="form" method="post"> <!--Creating the form that will be used to create lost item reports-->
+                <div class="form-group"> <!--Using Bootstrap styling here as well -->
                     <label for="nameTextField">Your Name</label>
                     <input type="text" class="form-control" id="reportedBy"
                     placeholder="Enter your name"
@@ -51,7 +52,9 @@
                     placeholder="Enter your school email"
                     name="contact" required>
                 </div>
+                <!--Submit and cancel buttons (Bootstrap)-->
                 <button class="btn btn-primary" type="submit">
+                    <!--Icons from fontawesome-free-->
                     <i class="fas fa-edit"></i> Submit
                 </button>
                 <a href="/home" class="btn btn-warning">
@@ -62,5 +65,5 @@
     </div>
 </div>
 
-
+<!--Including the content from footer.ejs partial-->
 <%- include ('partials/footer') %>

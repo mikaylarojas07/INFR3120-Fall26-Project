@@ -1,20 +1,26 @@
+<!--This page displays the table including all of the lost item reports-->
 <%- include ('partials/header') %>
+
 <div class="card bg-dark text-white">
   <div class="card-body">
     <h4 class="card-title">CampusFind</h4>
   </div>
 </div>
 <img src="/stylesheets/Images/image.jpg" class="mx-auto d-block">
+<!--Using me-2 and ms-2 for spacing/formatting of the Home and Report buttons (Bootstrap)-->
 <a href="/home" class="btn btn-primary me-2 ms-2">Back to Home</a>
 <a href="/items/create" class="btn btn-primary" role="button">
     <i class="fas fa-plus-circle"></i> Report Lost Item</a>
+<!--Centering the h1 text-->
 <div class="text-center">
 <h1>Lost Item Logs</h1>
 </div>
 <div class="container mb-5 pb-5">
+<!--Using Bootstrap tables, creates a table that populates all of the reported lost item logs-->
 <table class="table table-bordered table-striped table-hover">
     <!--Header Row-->
     <tr>
+        <!--Item fields -->
         <th class="text-center col-2">Reported by</th>
         <th class="text-center col-2">Item Name</th>
         <th class="text-center col-4">Description</th>
@@ -22,13 +28,15 @@
         <th class="text-center col-1">Date</th>
         <th class="text-center col-2">Contact</th>
     </tr>
-
+    <!--Iterates through the Itemlist and returns the corresponding information for each item-->
     <% for(let count=0;count<Itemlist.length;count++) { %>
         <tr>
           <td class="text-center col-2"><%= Itemlist[count].reportedBy %></td>
           <td class="text-center col-2"><%= Itemlist[count].itemName %></td>
           <td class="text-center col-4"><%= Itemlist[count].description %></td>
           <td class="col-2"><%= Itemlist[count].lastSeen %></td>
+          <!--date.toISOString().split('T')[0] code adapted from Stack Overflow, see README for details-->
+          <!--This line converts the date input to a readable format-->
           <td class="text-center col-1"><%= Itemlist[count].date.toISOString().split('T')[0] %></td>
           <td class="text-center col-2"><%= Itemlist[count].contact %></td>
           <td class="text-center col-1">

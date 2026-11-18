@@ -1,8 +1,10 @@
 //require .env configuration
+//Loads content from .env, which currently stores the MONGODB connection string
 require('dotenv').config();
 const mongoose = require('mongoose'); 
 
-//from stack overflow
+//Adapted from stack overflow, see README for details/link
+//Connects to the MongoDB cluster using the connection string in .env
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', () => {

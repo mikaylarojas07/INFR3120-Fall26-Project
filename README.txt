@@ -19,3 +19,11 @@ https://stackoverflow.com/questions/28729634/set-values-in-input-type-date-and-t
 
 EXAMPLE CODE FROM STACK OVERFLOW: 
 let dateInputFormatted = tmp.toISOString().split('T')[0];
+
+Citation #3: 
+Bootstrap code used for styling tables, footer, and form inputs (note that much of this code is adapted from the lectures)
+https://getbootstrap.com/
+
+Citation #4: 
+Fontawesome free icons used from https://www.npmjs.com/package/@fortawesome/fontawesome-free
+
