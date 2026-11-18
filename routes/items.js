@@ -92,7 +92,7 @@ router.post('/edit/:id', async (req, res) => {
             contact: req.body.contact
         });
 
-        res.redirect('/items');
+        res.redirect('/list');
     }
     catch(err){
         console.log(err);
