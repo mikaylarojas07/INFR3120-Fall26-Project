@@ -43,7 +43,7 @@ router.post('/create', async (req, res, next) => {
             contact: req.body.contact
         });
 
-        res.redirect('/home');
+        res.redirect('/items');
     } catch (err) {
         console.log(err);
     }

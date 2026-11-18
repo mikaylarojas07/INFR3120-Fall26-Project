@@ -29,7 +29,7 @@
           <td class="text-center col-2"><%= Itemlist[count].itemName %></td>
           <td class="text-center col-4"><%= Itemlist[count].description %></td>
           <td class="col-2"><%= Itemlist[count].lastSeen %></td>
-          <td class="text-center col-1"><%= Itemlist[count].date %></td>
+          <td class="text-center col-1"><%= Itemlist[count].date.toISOString().split('T')[0] %></td>
           <td class="text-center col-2"><%= Itemlist[count].contact %></td>
           <td class="text-center col-1">
             <a href="/items/edit/<%= Itemlist[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a></td>
