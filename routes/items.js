@@ -66,6 +66,21 @@ router.get('/delete/:id', async(req,res,next)=>{
     }
 });
 
+router.get('/edit/:id', async (req, res) => {
+    try {
+        const item = await Item.findById(req.params.id);
+
+        res.render('edit', {
+            title: 'Edit Lost Item',
+            item: item
+        });
+    }
+    catch (err) {
+        console.log(err);
+        res.redirect('/items');
+    }
+});
+
 module.exports = router;
 
       
