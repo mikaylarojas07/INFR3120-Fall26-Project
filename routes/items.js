@@ -83,6 +83,26 @@ router.get('/edit/:id', async (req, res) => {
     }
 });
 
+// Update Item
+router.post('/edit/:id', async (req, res) => {
+    try {
+
+        await Item.findByIdAndUpdate(req.params.id, {
+            reportedBy: req.body.reportedBy,
+            itemName: req.body.itemName,
+            description: req.body.description,
+            lastSeen: req.body.lastSeen,
+            date: req.body.date,
+            contact: req.body.contact
+        });
+
+        res.redirect('/items');
+
+    } catch (err) {
+        console.log(err);
+        res.redirect('/items');
+    }
+});
 
 module.exports = router;
 
