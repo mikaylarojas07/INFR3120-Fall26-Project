@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-//create
+//create lost item logs
 router.get('/create', async(req, res, next)=>{
     try{
         res.render('create', {
@@ -43,9 +43,26 @@ router.post('/create', async (req, res, next) => {
             contact: req.body.contact
         });
 
-        res.redirect('/items');
+        res.redirect('/home');
     } catch (err) {
         console.log(err);
+    }
+});
+
+router.get('/delete/:id', async(req,res,next)=>{
+    try{
+        let id= req.params.id;
+        Item.deleteOne({_id:id}).then(()=>{
+            res.redirect('/items')
+        })
+    }
+    catch(err){
+        console.error(err);
+        res.render('/items', {
+            title: 'Items',
+            Itemlist: [],
+            error: 'Error on server'
+        })
     }
 });
 

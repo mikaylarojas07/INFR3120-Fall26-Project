@@ -30,9 +30,9 @@
           <td class="text-center col-1"><%= Itemlist[count].date %></td>
           <td class="text-center col-2"><%= Itemlist[count].contact %></td>
           <td class="text-center col-1">
-            <a href="/books/edit/<%= Itemlist[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a></td>
+            <a href="/items/edit/<%= Itemlist[count]._id %>" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a></td>
           <td class="text-center col-1">
-            <a href="/books/delete/<%= Itemlist[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
+            <a href="/items/delete/<%= Itemlist[count]._id %>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
           </td>
         </tr>
       <%} %>
