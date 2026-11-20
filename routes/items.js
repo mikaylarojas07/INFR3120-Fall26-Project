@@ -4,7 +4,7 @@ let Item = require('../models/items');
 
 let mongoose = require('mongoose');
 
-// List all lost items using list.ejs when in /items
+// it is going to display all the lost items from Mongodb and sends them to your list.ejs page.
 router.get('/', async (req, res, next) => {
     try {
         const Itemlist = await Item.find();
