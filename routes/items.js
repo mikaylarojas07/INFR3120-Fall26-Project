@@ -65,7 +65,7 @@ router.get('/delete/:id', async(req,res,next)=>{
         })
     }
 });
-
+// edit function 
 router.get('/edit/:id', async (req, res) => {
     try {
         const item = await Item.findById(req.params.id);
